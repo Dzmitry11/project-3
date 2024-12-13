@@ -9,8 +9,8 @@ import org.example.project3.model.Movie;
 import java.util.List;
 import java.util.Optional;
 
-// This class serves as a repository for managing movie entities.
-// It provides methods to perform CRUD operations on the database.
+/** This class serves as a repository for managing movie entities.
+ It provides methods to perform CRUD operations on the database.**/
 @ApplicationScoped // Indicates that the class is a CDI (Contexts and Dependency Injection) bean with a single instance for the application lifecycle.
 @Transactional // Ensures that methods in this class are executed within a database transaction.
 public class MovieRepository {

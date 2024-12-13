@@ -1,7 +1,7 @@
 package org.example.project3.model;
 
 import jakarta.persistence.*;
-
+/**This class works as entity manager**/
 @Entity
 @Table(name = "movies")
 public class Movie {

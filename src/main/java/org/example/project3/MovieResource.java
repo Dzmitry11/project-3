@@ -6,7 +6,7 @@ import org.example.project3.db.MovieRepository;
 import org.example.project3.model.Movie;
 import java.util.List;
 
-// This class provides RESTful tools for movie management.
+/**This class provides RESTful tools for movie management.**/
 @Path("/movies")// This annotation defines the base URL path for the resource.
 public class MovieResource {
     @Inject // Injecting the MovieRepository to interact with the database.

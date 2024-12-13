@@ -5,7 +5,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.example.project3.model.Movie;
-
 import java.util.List;
 import java.util.Optional;
 

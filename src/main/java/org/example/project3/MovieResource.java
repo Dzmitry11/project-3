@@ -53,7 +53,6 @@ public class MovieResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
     /**
      * @param id
      * @param updatedMovie Method to handle PUT requests to update an existing movie by its ID

@@ -16,7 +16,6 @@ public class MovieRepository {
     @PersistenceContext // Injects the EntityManager for interacting with the persistence context (database).
     private EntityManager entityManager; // The EntityManager is used for database operations like querying, persisting, and updating entities.
 
-
     /**
      * @param movie Method to create a new movie in the database
      */
@@ -33,7 +32,8 @@ public class MovieRepository {
     }
 
     /**
-     * @return Method to retrieve all movies from the database
+     * Method to find all movies
+     * @return a list of movies
      */
     public List<Movie> findAll() {
         return entityManager.createQuery("SELECT m FROM Movie m", Movie.class) // The query fetches all rows from the Movie table.

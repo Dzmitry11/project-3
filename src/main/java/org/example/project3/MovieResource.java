@@ -13,7 +13,9 @@ public class MovieResource {
     @Inject // Injecting the MovieRepository to interact with the database.
     MovieRepository movieRepository; // Injecting the MovieRepository to interact with the database.
 
-    // Method to handle GET requests to retrieve all movies
+    /**
+     * @return Method to handle GET requests to retrieve all movies
+     */
     @GET
     public Response getMovies() {
         // Calling the repository to fetch all movies
@@ -22,7 +24,10 @@ public class MovieResource {
         return Response.ok().entity(movies).build();
     }
 
-    // Method to handle POST requests to create a new movie
+    /**
+     * @param movie Method to handle POST requests to create a new movie
+     * @return
+     */
     @POST
     public Response createMovie(Movie movie) {
         // The movie entity is passed as a parameter in the request body
@@ -32,7 +37,10 @@ public class MovieResource {
         return Response.status(Response.Status.CREATED).entity(movie).build();
     }
 
-    // Method to handle GET requests to retrieve a specific movie by its ID
+    /**
+     * @param id Method to handle GET requests to retrieve a specific movie by its ID
+     * @return
+     */
     @GET
     @Path("/{id}") // This annotation indicates that the method will handle requests with a specific movie ID.
     public Response getMovie(@PathParam("id") Long id) { // @PathParam binds the value from the URL to the method parameter.
@@ -46,14 +54,18 @@ public class MovieResource {
         }
     }
 
-    // Method to handle PUT requests to update an existing movie by its ID
+    /**
+     * @param id
+     * @param updatedMovie Method to handle PUT requests to update an existing movie by its ID
+     * @return
+     */
     @PUT
     @Path("/{id}")
     public Response updateMovie(@PathParam("id") Long id, Movie updatedMovie) {
         // Get movie from repository by using id
         Movie existingMovie = movieRepository.findById(id);
 
-        // If movie was found, update it
+        /* If movie was found, update it */
         if (existingMovie != null) {
             existingMovie.setTitle(updatedMovie.getTitle());
             existingMovie.setGenre(updatedMovie.getGenre());
@@ -72,7 +84,10 @@ public class MovieResource {
         }
     }
 
-    // Method to handle DELETE requests to remove a movie by its ID
+    /**
+     * @param id Method to handle DELETE requests to remove a movie by its ID
+     * @return
+     */
     @DELETE
     @Path("/{id}")
     public Response deleteMovie(@PathParam("id") Long id) {
